@@ -72,53 +72,54 @@
     </div>
 
     <div class="cards" id="services">
-        <h2 class="Title">Services</h2>
-        <div class="content">
-          <div class="card">
-            <div class="icon">
-              <i class="fas fa-edit"></i>
-            </div>
-            <div class="info">
-              <h3>Script Writing</h3>
-              <p>
-                Research and write scripts for different topics that can then be
-                directly recorded for video production
-              </p>
-            </div>
+      <h2 class="Title scroll-animate scroll-hidden">Services</h2>
+      <div class="content">
+          <div class="card scroll-animate scroll-hidden">
+              <div class="icon">
+                  <i class="fas fa-edit"></i>
+              </div>
+              <div class="info">
+                  <h3>Script Writing</h3>
+                  <p>
+                      Research and write scripts for different topics that can then be
+                      directly recorded for video production
+                  </p>
+              </div>
           </div>
-          <div class="card">
-            <div class="icon">
-              <i class="fa-solid fa-laptop-code"></i>
-            </div>
-            <div class="info">
-              <h3>Web Development</h3>
-              <p>
-                Develop customized websites for clients using HTML, CSS, and
-                Javascript
-              </p>
-            </div>
+          <div class="card scroll-animate scroll-hidden">
+              <div class="icon">
+                  <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <div class="info">
+                  <h3>Web Development</h3>
+                  <p>
+                      Develop customized websites for clients using HTML, CSS, and
+                      Javascript
+                  </p>
+              </div>
           </div>
-          <div class="card">
-            <div class="icon">
-              <i class="fa-regular fa-object-group"></i>
-            </div>
-            <div class="info">
-              <h3>System Analysis and design</h3>
-              <p>
-                Design the structure of the system from A-Z using Figma and Web
-                Development tools as well as testing for different systems
-              </p>
-            </div>
+          <div class="card scroll-animate scroll-hidden">
+              <div class="icon">
+                  <i class="fa-regular fa-object-group"></i>
+              </div>
+              <div class="info">
+                  <h3>System Analysis and design</h3>
+                  <p>
+                      Design the structure of the system from A-Z using Figma and Web
+                      Development tools as well as testing for different systems
+                  </p>
+              </div>
           </div>
-        </div>
       </div>
+  </div>
+  
 
 
       <hr>
 
-    <h1 class = "projects-header"> My <span> Projects </span> </h1>
+    <h1 class = "projects-header scroll-animate scroll-hidden"> My <span> Projects </span> </h1>
     <div class = "projects-sec" id = "projects">
-            <div class = "project-card">
+            <div class = "project-card scroll-animate scroll-hidden">
                 <img src = "Images/Hospital_Management_System.png">
                 <div class = "project-name">
                     <h3> Hospital Management system </h3>
@@ -133,7 +134,7 @@
                 </p>
             </div>
 
-            <div class = "project-card">
+            <div class = "project-card scroll-animate scroll-hidden">
                 <img src = "Images/Gym_Management_System.png">
                 <div class = "project-name">
                     <h3> Gym Management system </h3>
@@ -149,7 +150,7 @@
             </div>
 
 
-            <div class = "project-card">
+            <div class = "project-card scroll-animate scroll-hidden">
                 <img src = "Images/Hotel_Booking_Management.png">
                 <div class = "project-name">
                     <h3> Hotel Management system </h3>
@@ -164,7 +165,7 @@
             </div>
 
 
-            <div class = "project-card">
+            <div class = "project-card scroll-animate scroll-hidden">
                 <img src = "Images/Recipe management system.png">
                 <div class = "project-name">
                     <h3> Recipe Management system </h3>
@@ -179,7 +180,7 @@
                 </p>
             </div>
 
-            <div class = "project-card">
+            <div class = "project-card scroll-animate scroll-hidden">
                 <img src = "Images/Stock_Analysis.jpg">
                 <div class = "project-name">
                     <h3> Stock Analysis System </h3>
@@ -195,7 +196,7 @@
                 </p>
             </div>
 
-            <div class = "project-card">
+            <div class = "project-card scroll-animate scroll-hidden">
                 <img src = "Images/Battery_Health_System.jpeg">
                 <div class = "project-name">
                     <h3> Battery health monitoring app </h3>
@@ -211,9 +212,9 @@
         </div>
 
 
-        <h1 class = "skills-title"> My <span> Skills </span> </h1>
+        <h1 class = "skills-title scroll-animate scroll-hidden"> My <span> Skills </span> </h1>
         <div class="skills" id = "skills">        
-            <div class="coding-skills">
+            <div class="coding-skills scroll-animate scroll-hidden">
                 <h2> Coding Skills </h2>
         
                 <div class="coding-container">
@@ -239,7 +240,7 @@
                 </div>
             </div>
         
-            <div class="coding-skills">
+            <div class="coding-skills scroll-animate scroll-hidden">
                 <h2> Professional Skills </h2>
         
                 <div class="coding-container">
@@ -297,4 +298,20 @@
             </div>
         </footer>
   </body>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('scroll-show');
+          entry.target.classList.remove('scroll-hidden');
+        } else {
+          entry.target.classList.add('scroll-hidden');
+          entry.target.classList.remove('scroll-show');
+        }
+      });
+    });
+    
+    const scrollElements = document.querySelectorAll('.scroll-animate');
+    scrollElements.forEach((el) => observer.observe(el));
+  </script>
 </html>
